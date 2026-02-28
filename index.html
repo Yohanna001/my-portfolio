@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yohanna Isaac | Executive Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header/Navigation */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section with Image */
+        .hero {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: #2c3e50;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #3498db;
+            margin: 1rem auto;
+        }
+
+        /* About Section with Image */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-item {
+            background: #f4f4f4;
+            padding: 0.8rem;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* Client Cards - UPDATED */
+        .client-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .client-card {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .client-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .client-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+        }
+
+        .client-card h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .client-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+        }
+
+        .timeline-date {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-subtitle {
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .timeline-list {
+            list-style-position: inside;
+            color: #555;
+        }
+
+        .timeline-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Project Card with Video */
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .project-status {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section with WhatsApp */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: #f4f4f4;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-detail {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+
+        .whatsapp-section {
+            background: #dcf8c6;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .whatsapp-section h3 {
+            color: #075e54;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .client-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .client-cards {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+
+            .client-card img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">YI</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Yohanna Isaac</h1>
+                <h2>Executive Assistant | Virtual Assistant | Remote Support Specialist</h2>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Hire Me</a>
+                    <!-- UPDATED: Now links to your PDF file -->
+                    <a href="Yohanna_Isaac_CV.pdf" class="btn btn-secondary" download>Download CV</a>
+                    <a href="https://wa.link/6g5xci" class="btn btn-whatsapp" target="_blank">
+                        <span>📱</span> WhatsApp Me
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="my profile.jpeg" alt="Yohanna Isaac">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="yohanna.jpeg" alt="About Yohanna">
+            </div>
+            <div>
+                <p style="margin-bottom: 1rem;">Detail-oriented Executive Assistant with 4+ years of experience supporting C-level executives and managing remote operations. Proven track record in calendar management, document handling, and streamlining administrative processes.</p>
+                <p style="margin-bottom: 2rem;">Skilled in Google Workspace, Microsoft Office, and communication tools. Seeking remote customer support and administrative roles where I can contribute to organizational efficiency.</p>
+                
+                <h3 style="margin-bottom: 1rem; color: #2c3e50;">Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">Communication</div>
+                    <div class="skill-item">Time Management</div>
+                    <div class="skill-item">Problem Solving</div>
+                    <div class="skill-item">Multi-tasking</div>
+                    <div class="skill-item">Data Entry</div>
+                    <div class="skill-item">Email Handling</div>
+                    <div class="skill-item">Documentation</div>
+                    <div class="skill-item">Attention to Detail</div>
+                </div>
+
+                <h3 style="margin: 2rem 0 1rem; color: #2c3e50;">Technical Proficiencies</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">Google Workspace</div>
+                    <div class="skill-item">MS Word/Excel</div>
+                    <div class="skill-item">Zoom/Google Meet</div>
+                    <div class="skill-item">WhatsApp/Slack</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Cards Section - UPDATED (3 cards only, bigger and centered) -->
+    <section class="container">
+        <h2 class="section-title">Platforms I Work On</h2>
+        <div class="client-cards">
+            <div class="client-card">
+                <img src="upwork.jpg" alt="Upwork">
+                <h4>Upwork</h4>
+                <p>Top Rated Freelancer</p>
+            </div>
+            <div class="client-card">
+                <img src="ICON logos _ fonts SETS.jpg" alt="Fiverr">
+                <h4>Fiverr</h4>
+                <p>Level 2 Seller</p>
+            </div>
+            <div class="client-card">
+                <img src="WhatsApp Image 2025-10-28 at 6.43.50 PM.jpeg" alt="Tapam">
+                <h4>Tapam</h4>
+                <p>Virtual Assistant</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="container" style="background: #f9f9f9;">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">January 2024 - Present</div>
+                <h3 class="timeline-title">Virtual Executive Assistant</h3>
+                <div class="timeline-subtitle">Tapam (Remote)</div>
+                <ul class="timeline-list">
+                    <li>Provide comprehensive administrative support to leadership team of 5+ executives</li>
+                    <li>Coordinate team schedules, meetings, and monitor project milestones</li>
+                    <li>Organize executive communications and maintain confidential documentation</li>
+                    <li>Streamline workflow processes, resulting in improved team productivity</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">June 2020 - Present</div>
+                <h3 class="timeline-title">Freelance Executive Assistant</h3>
+                <div class="timeline-subtitle">Upwork | Fiverr | Tapam</div>
+                <ul class="timeline-list">
+                    <li>Manage executive calendars, email correspondence, and task tracking systems for 10+ clients</li>
+                    <li><strong>Coordinate 50+ virtual meetings monthly</strong>, including agenda preparation and minutes documentation</li>
+                    <li>Assist in preparing reports, presentations, and project documentation</li>
+                    <li>Maintain 100% client satisfaction rating through timely and accurate task completion</li>
+                    <li>Handle data entry and documentation with zero-error track record</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 class="section-title">Featured Project</h2>
+        <div class="project-card">
+            <div class="video-container">
+                <video autoplay muted loop playsinline>
+                    <source src="tapam video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <span class="project-status">Ongoing</span>
+            <h3 class="project-title">Digital Media & Community Growth Initiative</h3>
+            <ul class="timeline-list">
+                <li>Coordinate media planning and community outreach activities</li>
+                <li>Manage documentation and streamline team communication workflows</li>
+                <li>Support content production and partnership coordination efforts</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="container">
+        <h2 class="section-title">Work Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="Comment créer une liste de contrôle dans Excel.jpg" alt="Work 1">
+            </div>
+            <div class="gallery-item">
+                <img src="Business conference Photos - Download Free High-Quality Pictures _ Freepik.jpg" alt="Work 2">
+            </div>
+            <div class="gallery-item">
+                <img src="HUBiquitous Talent Program_ Empowering the Next Generation of Tech Leaders in Ghana.jpg" alt="Work 3">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container" style="background: #f9f9f9;">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">Contact Information</h3>
+                <div class="contact-detail">
+                    <span class="contact-icon">📍</span>
+                    <span>Calabar, Cross River State, Nigeria</span>
+                </div>
+                <div class="contact-detail">
+                    <span class="contact-icon">📧</span>
+                    <span>yohannaisaac330@gmail.com</span>
+                </div>
+            </div>
+            <div class="whatsapp-section">
+                <h3>Chat with me on WhatsApp</h3>
+                <p>Quick responses within 1-2 hours</p>
+                <a href="https://wa.link/6g5xci" class="whatsapp-button" target="_blank">
+                    <span>📱</span> Send WhatsApp Message
+                </a>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">Click to start a conversation</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Upwork</a> | 
+            <a href="#">Fiverr</a> | 
+            <a href="#">Email</a>
+        </div>
+        <p style="margin-top: 1rem;">© 2026 Yohanna Isaac. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Sticky header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = '#1a2632';
+            } else {
+                header.style.backgroundColor = '#2c3e50';
+            }
+        });
+    </script>
+</body>
+</html>
